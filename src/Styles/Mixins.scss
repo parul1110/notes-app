@@ -1,0 +1,105 @@
+@import "./Variables.scss";
+
+@mixin color-scheme($bg, $textcolor){
+    background-color: $bg;
+    color: $textcolor;
+}
+
+@mixin btn-close(){
+    float: right;
+    margin-top: 10px;
+    border-color: lightgray;
+}
+
+.dark-theme {
+    @include color-scheme($scheme-dark...);
+}
+
+.light-theme {
+    @include color-scheme($scheme-light...);
+}
+
+.btn-light-scheme {
+    @include color-scheme($scheme-light...);
+    border-radius: $radius-btn;
+    border-color: $light-bg;
+    padding: $padding-btn;
+    font-family: $family-btn;
+    width: $width-btn;
+    height: $height-btn;
+}
+
+.btn-dark-scheme {
+    @include color-scheme($scheme-dark...);
+    border-radius: $radius-btn;
+    border-color: $dark-bg;
+    padding: $padding-btn;
+    font-family: $family-btn;
+    width: $width-btn;
+    height: $height-btn;
+}
+
+.modal-dialog {
+    border-radius: $radius-btn;
+    padding: 15px;
+    position: absolute !important;
+    top: 20%;
+    left: 29%;
+    background-color: lightgray;
+    width: 40%;
+    height: 200px;
+
+    .modal-content {
+        width: 100%;
+        height: inherit;
+
+            .modal-header {
+                width: inherit;
+                height: 30%;
+
+                .modal-title {
+                    float: left;
+                }
+                .close {
+                    @include btn-close();
+                }
+            }
+
+            .modal-body {
+                width: inherit;
+                height: 40%;
+
+                textarea {
+                    width: 95%;
+                }
+            }
+            .modal-footer {
+                width: inherit;
+                height: 30%;
+            }
+    }
+
+}
+.noteboxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.modal-dialog-notebox {
+    border-radius: $radius-btn;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5px;
+    background-color: color-mix(in srgb, lightgray 80%, white);
+    width: 38%;
+    height: 100px;
+    overflow: auto;
+    text-align: left;
+    padding: 5px;
+    display: inline-block;
+  }
+  .note-close {
+    @include btn-close();
+
+  }
